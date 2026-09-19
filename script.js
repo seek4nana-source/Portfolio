@@ -54,25 +54,6 @@ if (themeToggle) {
   });
 }
 
-const contactForm = document.querySelector(".contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const submitButton = contactForm.querySelector("button[type='submit']");
-    const originalText = submitButton.textContent;
-
-    submitButton.textContent = "Message sent!";
-    submitButton.disabled = true;
-    contactForm.reset();
-
-    setTimeout(() => {
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
-    }, 2200);
-  });
-}
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
